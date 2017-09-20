@@ -1,15 +1,21 @@
 import requests
 from bs4 import *
 
+animelink = raw_input("Enter Link of your Anime Series : ")
+
 start = int(input("Enter Episode Number to start with : "))
 end = int(input("Enter Episode Number to end with : "))
 print "Generating Links from", start, "to", end 
 end=end+1
 
+#https://ww3.gogoanime.io/category/boruto-naruto-next-generations
+animename = animelink.split("/")
+
+
 links = []
-URL_PATTERN = 'https://ww3.gogoanime.io/detective-conan-episode-{}'
+URL_PATTERN = 'https://ww3.gogoanime.io/{}-episode-{}'
 for episode in range(start,end):
-	url = URL_PATTERN.format(episode)
+	url = URL_PATTERN.format(animename[4],episode)
 	srcCode = requests.get(url)
 	plainText = srcCode.text
 	soup = BeautifulSoup(plainText,"lxml")
