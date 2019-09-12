@@ -1,6 +1,14 @@
 # gogoanime
 This script gets you all download links of your favourite Anime into text file.
 
+## Prerequisites
+* Python
+* Pip
+* The following modules:
+  (Use pip install to download them)
+  * requests
+  * bs4
+
 How to Use :
 
 Enter URL of your anime from <a href="gogoanime.io">gogoanime.io<a>
